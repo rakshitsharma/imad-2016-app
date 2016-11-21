@@ -24,7 +24,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'https://yt3.ggpht.com/-NfjJzRLJQm8/AAAAAAAAAAI/AAAAAAAAAAA/GIjrzRIWa5w/s100-c-k-no-mo-rj-c0xffffff/photo.jpg'));
+  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
 
