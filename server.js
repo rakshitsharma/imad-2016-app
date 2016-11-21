@@ -6,18 +6,35 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleone= {
-    title: 'Article one',
-    heading: 'Article one | rakshit',
-    content:
-    `<p>
-        This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
-    </p>
-    <p>
-        This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
-    </p>`
+var articles ={
+    articleone: {
+        title: 'Article one',
+        heading: 'Article one | rakshit',
+        content:
+        `<p>
+            This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
+        </p>
+        <p>
+            This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
+        </p>`
+    },
+    articletwo: {
+        title: 'Article two',
+        heading: 'Article two | rakshit',
+        content:
+        `<p>
+            This is the content of my second webapp.
+        </p>`
+    },
+    articlethree: {
+        title: 'Article three',
+        heading: 'Article three | rakshit',
+        content:
+        `<p>
+            This is the content of my second webapp.
+        </p>`
+    },
 };
-
 
 function createTemplate(data) {
     var title = data.title;
@@ -56,12 +73,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/one', function(req,res){
-    res.send(createTemplate(articleone));
+app.get('/:artriclename', function(req,res){
+    // :articlename === articleone
+    var articlename = req.params.articlename;
+    res.send(createTemplate(articles[articlename]));
 });
-app.get('/ui/two', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'two.html'));
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
