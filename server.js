@@ -5,6 +5,19 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var content = {
+    title: "Article one",
+    heading: "Article one | rakshit",
+    content:
+    `<p>
+        This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
+    </p>
+    <p>
+        This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
+    </p>`
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
