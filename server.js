@@ -24,7 +24,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'C:\Users\rakshit\Desktop\IMG_20151224_154430143.jpg'));
 });
 
 
