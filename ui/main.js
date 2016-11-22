@@ -10,6 +10,8 @@ img.onclick = function() {
 };*/
 
 var button = document.getElementById('counter');    
+var counter =0;
+
 button.onclick = function(){
     
     //make a request to counter endpoint
@@ -19,4 +21,5 @@ button.onclick = function(){
     //render the variable in correct span
     counter = counter +1;
     var span = document.getElementById("count");
+    span.InnerHtml = counter.toString();
 };
