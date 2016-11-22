@@ -9,6 +9,7 @@ img.onclick = function() {
     var interval = setInterval(moveright, 100);
 };*/
 
+//counter code
 var button = document.getElementById('counter');    
 var counter = 0;
 
@@ -21,5 +22,5 @@ button.onclick = function(){
     //render the variable in correct span
     counter = counter +1;
     var span = document.getElementById('count');
-    span.innerHtml = counter.toString();
+    span.innerHTML = counter.toString();
 };
