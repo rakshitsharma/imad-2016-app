@@ -46,7 +46,7 @@ submit.onclick = function() {
                      
             //capture a list of names and render it as a list
             var names = request.responseText;
-            names = JSON.parse(names);
+            names = JSON.parse(names);  //to convert names from string to array
             var list = '';
             for( var i=0 ; i<name.length ; i++){
                 list += '<li>' + name[i] + '</li>';
