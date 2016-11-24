@@ -26,3 +26,10 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+._asdf {
+    max-width: 400px;
+}
+._op {
+    float: right;
+}
