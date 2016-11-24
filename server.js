@@ -87,7 +87,7 @@ app.get('/submit-name', function(req, res){  //url /submit-name?name=****  using
    
    names.push(name);
    //JSON javascript object notation
-   res.send(JSON.stringify(names));
+   res.send(JSON.stringify(names));   //converts names fron array to strings
 });
 
 app.get('/:articlename', function(req,res){
