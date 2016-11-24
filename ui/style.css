@@ -29,6 +29,7 @@ body {
 
 ._asdf {
     max-width: 400px;
+    margin: 0 auto;
     padding-right: 300px;
 }
 ._op {
