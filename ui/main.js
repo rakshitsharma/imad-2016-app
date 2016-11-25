@@ -1,15 +1,3 @@
-/*move the image
-var marginLeft = 0;
-function moveright() {
-    marginLeft = marginLeft + 0.1;
-    img.style.marginLeft = marginLeft + 'px';
-}
-var img = document.getElementById('madi');
-img.onclick = function() {
-    var interval = setInterval(moveright, 100);
-};*/
-
-
 //counter code
 var button = document.getElementById('counter');    
 
