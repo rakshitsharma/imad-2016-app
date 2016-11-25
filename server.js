@@ -14,37 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-
-var articles ={
-    articleone: {
-        title: 'Article one',
-        heading: 'Article one | rakshit',
-        content:
-        `<p>
-            This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp. This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
-        </p>
-        <p>
-            This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.This is the content of my first webapp.
-        </p>`
-    },
-    articletwo: {
-        title: 'Article two',
-        heading: 'Article two | rakshit',
-        content:
-        `<p>
-            This is the content of my second webapp.
-        </p>`
-    },
-    articlethree: {
-        title: 'Article three',
-        heading: 'Article three | rakshit',
-        content:
-        `<p>
-            This is the content of my second webapp.
-        </p>`
-    },
-};
-
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
@@ -113,7 +82,7 @@ app.get('/articles/:articleName', function(req,res){
     // articles[articleNmae] == {} content object for article one
     
     //SELECT * FROM article WHERE title = '/' ; DELETE WHERE a=/'asdf'
-    pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'" , function(err,result){
+    pool.query("SELECT * FROM article WHERE title = $1" , [req.params.articleName] , function(err,result){
        if(err) {
            res.status(500).send(err.toString());
        } else {
