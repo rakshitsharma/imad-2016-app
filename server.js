@@ -77,6 +77,7 @@ app.get('/submit-name', function(req, res){  //url /submit-name?name=****  using
    res.send(JSON.stringify(names));   //converts names fron array to strings
 });
 
+
 app.get('/articles/:articleName', function(req,res){
     // :articleName === Article-one
     // articles[articleNmae] == {} content object for article one
