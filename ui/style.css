@@ -31,5 +31,6 @@ body {
     float: right;
     max-width: 500px;
     margin: 0 auto;
+    padding-right: 200px;
     padding-left: 50px;
 }
